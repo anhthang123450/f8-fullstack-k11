@@ -1,30 +1,17 @@
 let a = 1;
-let b = -5;
-let c = 0;
+let b = 0;
+let c = 8;
 
-if (a > b && a > c) {
-    if (b > c) {
-        console.log(a + "," + b + "," + c);
-    } else {
-        console.log(a + "," + c + "," + b);
-
-    }
-} else if (b > a && b > c) {
-    if (a > c) {
-        console.log(b + "," + a + "," + c);
-
-    } else {
-        console.log(b + "," + c + "," + a);
-    }
-} else if (c > a && c > b) {
-    if (a > b) {
-        console.log(c + "," + a + "," + b);
-
-    } else {
-        console.log(c + "," + b + "," + a);
-
-    }
-
-} else {
-    console.log(c + "," + b + "," + a);
+if (a > b) {
+    [a, b] = [b, a]// hoán đổi vị trí a và b
 }
+
+if (a > c) {
+    [a, c] = [c, a] //hoán đổi vị trí a,c
+}
+
+if (b > c) {
+    [b, c] = [c, b] // hoán đổi vị trí b,c
+}
+
+console.log(a, b, c);
