@@ -13,3 +13,11 @@ function personalTax() {
     }
 }
 console.log(personalTax());
+
+/**
+ *  Khoản thu nhập <= 11 triệu: Không tính thuế.
+    Khoản thu nhập từ trên 11 triệu đến 25 triệu: 5% thuế.
+    Khoản thu nhập từ trên 25 triệu đến 50 triệu: 10% thuế.
+    Khoản thu nhập từ trên 50 triệu đến 80 triệu: 20% thuế.
+    Khoản thu nhập từ trên 80 triệu: 30% thuế.
+ */
