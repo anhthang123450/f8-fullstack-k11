@@ -6,57 +6,39 @@ const students = [
     { name: 'Doan Van E', score: 10 },
     { name: 'Hoang Thi F', score: 6 },
 ];
-function findHighestLowest(students) {
+
+function analyzeStudents(students) {
     let highest = students[0];
     let lowest = students[0];
-    for (const student of students) {
+    const groups = { A: [], B: [], C: [], D: [] };
+    for (let i = 0; i < students.length; i++) {
+        const student = students[i];
         if (student.score > highest.score) {
             highest = student;
         }
         if (student.score < lowest.score) {
             lowest = student;
         }
-    }
-    return { highest, lowest };
-}
-function groupStudents(students) {
-    const output = {
-        group: {
-            A: [],
-            B: [],
-            C: [],
-            D: []
-        }
-    };
-    for (const student of students) {
-        let band;
+
         if (student.score >= 8) {
-            band = "A";
+            groups.A.push(student);
         } else if (student.score >= 6) {
-            band = "B";
+            groups.B.push(student);
         } else if (student.score >= 4) {
-            band = "C";
+            groups.C.push(student);
         } else {
-            band = "D";
+            groups.D.push(student);
         }
-        output.group[band].push(student);
     }
-
-    return output;
+    return {
+        highest,
+        lowest,
+        group: groups,
+    };
 }
+const result = analyzeStudents(students);
+console.log(result);
 
-const highestLowest = findHighestLowest(students);
-const groupedStudents = groupStudents(students);
-
-const highest = highestLowest.highest;
-const lowest = highestLowest.lowest;
-const group = groupedStudents.group;
-
-console.log({
-    highest: highest,
-    lowest: lowest,
-    groups: group
-});
 
 
 
