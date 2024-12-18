@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [];
+        function createUser(name, password, email) {
+            return {
+                name: name,
+                password: password,
+                email: email,
+                role: "user"
+            };
+        }
+
+        function dataRegister(name, password, email) {
+            if (!name || !password || !email) {
+                console.log("Dữ liệu không hợp lệ");
+                return;
+            }
+            if (password.length < 6) {
+                console.log("Mật khẩu phải nhiều hơn 6 ký tự");
+                return;
+            }
+            const newUser = createUser(name, password, email);
+            data.push(newUser);
+            return data;
+        }
+
+        //login
+        function dataLogin(email, password) {
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].email === email && data[i].password === password) {
+                    return data[i];
+                }
+            }
+            console.log("Thông tin đăng nhập không hợp lệ");
+        }
+
+        dataRegister("", "123456", "nguyenvana@email.com");//false
+        dataRegister("Nguyen Van B", "111", "nguyenvanb@email.com");//falil
+        dataRegister("Nguyen Van B", "123456", "nguyenvanb@email.com");//true
+        dataRegister("Nguyen Van B", "123456", "nguyenvanb@email.com");//true
+
+        console.log(data);
+
+        const loggedInUser = dataLogin("nguyenvanb@email.com", "123456");//true
+        console.log(loggedInUser);
+
+        const faileddataLogin = dataLogin("nguyenvana@email.com", "123456"); //false
+    </script>
+</body>
+
+</html>
