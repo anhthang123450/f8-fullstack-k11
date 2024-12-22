@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fibonacci(n) {
+            if (n < 0) return "Số nhập vào phải là số nguyên dương";
+            else if (n === 0 || isNaN(n)) return "Số phần tử không hợp lệ";
+            let newArr = new Array(n + 1).fill(0);
+            return newArr.reduce((acc, cur, index) => {
+                if (index === 0) acc.push(0);
+                else if (index === 1) acc.push(1);
+                else acc.push(acc[index - 1] + acc[index - 2]);
+                return acc;
+            }, []);
+        }
+        const n = parseInt(prompt("Nhập số n: "));
+        console.log("Dãy fibonacci: ", fibonacci(n));
+    </script>
+</body>
+
+</html>
