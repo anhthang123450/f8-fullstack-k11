@@ -13,9 +13,11 @@
                 }
                 let accumulator =
                     initialValue !== undefined ? initialValue : this[0];
-                let start = initialValue !== undefined ? 0 : this[1];
+                let start = initialValue !== undefined ? 0 : 1;
                 for (let i = start; i < this.length; i++) {
-                    accumulator = callback(accumulator, this[i], i, this);
+                    if (i in this) {
+                        accumulator = callback(accumulator, this[i], i, this);
+                    }
                 }
                 return accumulator;
             };
