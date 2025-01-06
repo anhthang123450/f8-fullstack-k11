@@ -18,11 +18,8 @@ Năm 2016 - nay:Các phiên bản ECMAScript mới được ra mắt liên tục
                 const lowContent = content.toLowerCase();
                 const lowKeyword = keyword.toLowerCase();
                 for (let i = 0; i < content.length; i++) {
-                    if (lowContent.slice(i, keylen + i) === keyword) {
-                        newContent += `<b>${lowContent.slice(
-                            i,
-                            keylen + i
-                        )}</b>`;
+                    if (lowContent.slice(i, keylen + i) === lowKeyword) {
+                        newContent += `<b>${content.slice(i, keylen + i)}</b>`;
                         i = i + keylen - 1;
                     } else {
                         newContent += content[i];
@@ -30,7 +27,7 @@ Năm 2016 - nay:Các phiên bản ECMAScript mới được ra mắt liên tục
                 }
                 return newContent;
             };
-            document.write(printHighlight(jsContent, "javascript"));
+            document.write(printHighlight(jsContent, "JAVAscript"));
 
             const fixedContent = (content) => {
                 let newContent = "";
@@ -40,7 +37,7 @@ Năm 2016 - nay:Các phiên bản ECMAScript mới được ra mắt liên tục
                 for (let i = 0; i < content.length; i++) {
                     const curChar = content[i];
                     const nextChar = content[i + 1];
-                    const beforChar = content[i - 1];
+                    const beforeChar = content[i - 1];
 
                     if (punctuation.includes(curChar)) {
                         newContent += curChar;
@@ -49,14 +46,14 @@ Năm 2016 - nay:Các phiên bản ECMAScript mới được ra mắt liên tục
                         }
                     } else if (openCharacters.includes(curChar)) {
                         newContent += curChar;
-                        if (beforChar !== " ") {
+                        if (beforeChar !== " ") {
                             newContent += " ";
                         } else if (nextChar !== " ") {
                             newContent += " ";
                         }
                     } else if (closeCharacters.includes(curChar)) {
                         newContent += curChar;
-                        if (beforChar !== " ") {
+                        if (beforeChar !== " ") {
                             newContent += " ";
                         } else if (nextChar !== " ") {
                             newContent += " ";
