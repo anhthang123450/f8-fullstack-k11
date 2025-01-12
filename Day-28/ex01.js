@@ -8,7 +8,7 @@ function hourClock() {
     const seconds = Math.floor(totalSeconds % 60);
     document.body.innerHTML = "";
     document.write(
-        `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} là đến tết 2026 `
+        `Còn ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây là đến tết 2026 `
     );
 }
 setInterval(hourClock, 1000);
