@@ -50,7 +50,7 @@ function menuList(menu, parentId = 0) {
         const fontSize = item.parentId === 0 ? "24px" : "20px";
         menuItem += /*html*/ `
         <li> 
-        <a style = "font-size: ${fontSize}"  href = "#">${item.name}</a>
+        <a style = "font-size: ${fontSize}" href = "#">${item.name}</a>
         ${menuList(menu, item.id)}
         </li>
     `;
