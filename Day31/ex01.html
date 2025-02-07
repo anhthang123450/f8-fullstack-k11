@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                font-size: 16px;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .todo-form {
+                margin-left: 40px;
+            }
+            .task-item {
+                list-style: none;
+                display: flex;
+                align-items: center;
+            }
+            .task-title {
+                display: block;
+                font-size: 20px;
+                margin: 10px 0;
+                min-width: 100px;
+            }
+
+            .task-action {
+                margin-left: 12px;
+            }
+            .task-btn {
+                margin: 4px;
+                min-width: 140px;
+            }
+            .complete {
+                opacity: 0.6;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <form action="" id="todo-form">
+                <input
+                    type="text"
+                    id="todo-input"
+                    class="input"
+                    placeholder="Nhập công việc"
+                    spellcheck="false"
+                />
+                <button
+                    id="submit"
+                    class="submit-btn"
+                    onmousedown="event.preventDefault()"
+                >
+                    Thêm
+                </button>
+            </form>
+            <ul id="task-list"></ul>
+        </main>
+        <script src="ex01.js"></script>
+    </body>
+</html>

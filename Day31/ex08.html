@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #eee;
+                display: flex;
+            }
+
+            h1 {
+                margin-bottom: 12px;
+            }
+
+            .num {
+                padding: 4px 0;
+                min-width: 200px;
+            }
+            .input-name {
+                margin: 10px 0;
+                display: block;
+                min-width: 120px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            #content {
+                width: 300px;
+
+                background-color: #fff;
+                margin: 120px auto 0;
+                padding: 20px;
+                border-radius: 4px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .calcBtn {
+                min-width: 80px;
+                margin-top: 12px;
+                background-color: rgb(68, 247, 110);
+                color: #fff;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                padding: 4px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <main id="content">
+            <div class="input">
+                <h1>Chia Bill</h1>
+                <label class="input-name">Tổng Bill:</label>
+                <input class="num total-bill" type="text" /> <br />
+                <label class="input-name">Số người chia:</label
+                ><input class="num people" type="text" /> <br />
+                <label class="input-name">Tiền tip:</label
+                ><input
+                    class="num money-tips"
+                    type="text"
+                    placeholder="Nhập tiền tips(Nếu có)"
+                />
+            </div>
+            <button class="calcBtn">Tính tiền</button>
+            <p class="amount-pay"></p>
+            <p class="total-money"></p>
+        </main>
+        <script src="ex08.js"></script>
+    </body>
+</html>

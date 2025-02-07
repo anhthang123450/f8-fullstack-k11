@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #eee;
+                display: flex;
+            }
+
+            h1 {
+                margin-bottom: 12px;
+            }
+            #content {
+                width: 600px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+                margin: 120px auto 0;
+                padding: 20px;
+                border-radius: 4px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .operation {
+                margin-top: 58px;
+            }
+            .num {
+                min-width: 200px;
+            }
+            .input-name {
+                display: block;
+                min-width: 120px;
+            }
+            .calcBtn {
+                min-width: 80px;
+                margin-top: 12px;
+                background-color: rgb(81, 81, 250);
+                color: #fff;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                padding: 4px 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <main id="content">
+            <div class="input">
+                <h1>Bé Tập Tính Website</h1>
+                <label class="input-name">Nhập số thứ nhất</label>
+                <input class="num num1" type="text" /> <br />
+                <label class="input-name">Nhập số thứ hai</label
+                ><input class="num num2" type="text" /> <br />
+                <label class="input-name">Kết quả</label
+                ><input class="num result" type="text" />
+            </div>
+            <div class="operation">
+                <div class="up">
+                    <input type="checkbox" name="" id="operation-tick" />
+                    <label for="">Cộng</label>
+                    <input type="checkbox" name="" id="operation-tick" />
+                    <label for="">Trừ</label>
+                </div>
+
+                <div class="down">
+                    <input type="checkbox" name="" id="operation-tick" />
+                    <label for="">Nhân</label>
+                    <input type="checkbox" name="" id="operation-tick" />
+                    <label for="">Chia</label>
+                </div>
+
+                <button class="calcBtn">Tính</button>
+            </div>
+        </main>
+        <script src="ex07.js"></script>
+    </body>
+</html>
